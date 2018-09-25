@@ -30,7 +30,7 @@ class Player:
             print("Player",self.indicator," win the game !!!")
             return 1
         if (np.sum(self.board == 0) == 0 ):
-            print("tied")
+            print("Good Job is a Tied game")
             return 0.000001
         return 0
     
@@ -125,13 +125,13 @@ win = 0
 for iteration in range(0,1000):
     stop = 0 
     board = board * 0 
-    print("please answer with yes/no !     if you want to quit type (Q)")
+    print("please answer with (yes/no) !     if you want to quit type (Q)")
     start = input("Do you wanna Start?")
     if (start=="Q"):
         break
     
     while ((start != "yes")&(start != "no")):
-        print("please answer with yes/no !")
+        print("please answer with (yes/no) !")
         start = input("Do you wanna Start?")
         
     if (start == "no"):
@@ -150,7 +150,7 @@ for iteration in range(0,1000):
             print("please select an empty element")
             row_loc = int(input("Which row do you wanna play?"))
             col_loc = int(input("Which column do you wanna play?"))
-
+            
            
         player1 = Player(row_loc,col_loc,board,1)  
         board = player1.move()
